@@ -1,0 +1,390 @@
+body {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  background-image: url("Images/background.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-color: black;
+  cursor: none;
+}
+
+.row,
+.row2,
+.row3,
+.row4 {
+  display: flex;
+  width: 100%;
+}
+
+.row {
+  height: 10%;
+}
+.row2 {
+  height: 20%;
+}
+.row3 {
+  height: 10%;
+}
+.row4 {
+  height: 10%;
+}
+.row5 {
+  height: 10%;
+}
+
+.box {
+  width: 9.05%;
+  height: 100%;
+}
+.box1 {
+  width: 19%;
+  height: 100%;
+}
+
+.boxtext {
+  width: 12%;
+  height: 100%;
+  background: black;
+  border: 3px solid red;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: 5px;
+  color: red;
+  font-size: 1.5rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+  position: relative;
+  z-index: 99999;
+  font-family: "Science Gothic", sans-serif;
+}
+
+.boxtext.red {
+  color: red;
+  font-size: 1.5rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+  font-family: "Science Gothic", sans-serif;
+}
+
+.box2 {
+  width: 35%;
+  height: 100%;
+}
+.box3 {
+  width: 3%;
+  height: 80%;
+}
+.box4 {
+  width: 9%;
+  height: 30%;
+}
+.box5 {
+  width: 5%;
+  height: 100%;
+}
+.box6 {
+  width: 38%;
+  height: 80%;
+}
+.box7 {
+  width: 10%;
+  height: 90%;
+}
+.box8 {
+  width: 35%;
+  height: 100%;
+}
+.box9 {
+  width: 30%;
+  height: 100%;
+}
+.box10 {
+  width: 4%;
+  height: 100%;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+}
+
+.modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 10000;
+}
+
+.modal-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#myModalbat {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: url("Images/Modal-background.webp") center/cover no-repeat;
+  justify-content: center;
+  align-items: center;
+  z-index: 11000;
+}
+
+#myModalnote {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: url("Images/Notes/Notes-background.png") center/cover no-repeat;
+  filter: brightness(100%) drop-shadow(0 0 10px red);
+  justify-content: center;
+  align-items: center;
+  z-index: auto;
+}
+
+#myModalnote img {
+  pointer-events: auto;
+}
+
+.bat-container {
+  position: relative;
+  width: 85vw;
+  height: 85vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 11000;
+}
+
+.slots-image {
+  height: 25vh;
+  width: 100%;
+  object-fit: contain;
+  z-index: 12000;
+}
+
+.rot-battery {
+  height: 20vh;
+  object-fit: contain;
+  transform-origin: center;
+  z-index: 99000;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+  filter: brightness(20%) drop-shadow(0 0 10px red);
+}
+
+.close {
+  position: fixed;
+  top: 1%;
+  right: 2%;
+  font-size: 75px;
+  font-weight: bold;
+  color: red;
+  z-index: 20000;
+  pointer-events: auto;
+}
+
+.close:hover {
+  color: green;
+}
+
+#SLOTS {
+  margin-top: 50px;
+  z-index: 1000;
+}
+
+.flashlight {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(circle var(--size, 200px) at var(--x) var(--y));
+  mix-blend-mode: lighten;
+  z-index: 12000;
+  opacity: 1;
+  transition: opacity 0.1s linear;
+}
+
+#darkness {
+  position: fixed;
+  inset: 0;
+  background: black;
+  pointer-events: none;
+  z-index: 11500;
+  mask: radial-gradient(
+    circle var(--size, 200px) at var(--x) var(--y),
+    transparent 0%,
+    transparent 40%,
+    rgba(0, 0, 0, 0.8) 70%,
+    black 100%
+  );
+  opacity: 1;
+  transition: opacity 0.1s linear;
+}
+
+#cursorDot {
+  position: fixed;
+  width: 15px;
+  height: 15px;
+  background: red;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 20000;
+  box-shadow: 0 0 8px black, 0 0 15px rgba(0, 0, 0, 0);
+}
+
+.flash-off {
+  --size: 0px !important;
+}
+
+.flash-on {
+  --size: 250px !important;
+}
+
+@font-face {
+  font-family: "Science Gothic";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url("https://cdn.jsdelivr.net/fontsource/fonts/science-gothic@latest/latin-400-normal.woff2")
+      format("woff2"),
+    url("https://cdn.jsdelivr.net/fontsource/fonts/science-gothic@latest/latin-400-normal.woff")
+      format("woff");
+}
+
+.red {
+  background-color: red;
+}
+
+.clickable1 {
+  filter: brightness(10%) drop-shadow(2px 8px 3px);
+  transition: transform 0.15s ease, filter 0.15s ease;
+}
+.clickable1:hover {
+  filter: brightness(100%) drop-shadow(2px 8px 3px);
+  transform: scale(1.2);
+}
+.clickable1:active {
+  filter: drop-shadow(0px 0px 3px);
+  transform: scale(0.98);
+}
+.downarrow {
+  position: relative;
+  left: 140px;
+  z-index: 20001;
+  display: none;
+}
+.clickable2 {
+  filter: brightness(20%) drop-shadow(0 0 10px red);
+  transition: transform 0.15s ease, filter 0.15s ease;
+}
+.clickable2:hover {
+  filter: brightness(100%) drop-shadow(0 0 10px red);
+}
+.clickable2:active {
+  filter: brightness(20%) drop-shadow(0 0 10px red);
+  transform: scale(0.98);
+}
+#NoteLarrow,
+#NoteRarrow {
+  isolation: isolate;
+  filter: brightness(20%) drop-shadow(0 0 10px red);
+}
+
+#arrowOverlay {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 13000;
+  display: none;
+}
+
+#arrowOverlay img {
+  pointer-events: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 20vh;
+}
+.arrowWrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.15s ease;
+  z-index: 13000;
+}
+.arrowWrap:hover {
+  transform: scale(1.2);
+}
+.arrowWrap:active {
+  transform: scale(0.98);
+}
+.note-title {
+  text-align: center;
+  color: red;
+  font-size: 24px;
+  margin-bottom: 50px;
+  margin-top: 50px;
+  letter-spacing: 20px;
+  font-family: "YouMurderer";
+  z-index: 99999;
+}
+.note-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  width: 100%;
+}
+#MiniMap {
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  max-height: 300px;
+  max-width: 300px;
+  height: auto;
+  z-index: 99999;
+  filter: drop-shadow(0 0 8px black);
+  pointer-events: none;
+}
+
+.offsymbol {
+  border: 3px solid red;
+  position: relative;
+  z-index: 13001;
+}
+
+.hidden {
+  display: none !important;
+}
+#timerDisplay {
+  color: red;
+  font-size: 50px; /* adjust size if you want */
+  font-weight: bold;
+  position: absolute; /* optional: place it where you want */
+  top: 10px;
+  right: 50%;
+  z-index: 10000; /* make sure it's on top of other elements */
+  font-family: "Science Gothic";
+}
+.red {
+  background-color: red;
+}

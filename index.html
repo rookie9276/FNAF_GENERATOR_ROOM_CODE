@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Generator Room</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <img id="MiniMap" src="Images/Minimap.png" />
+
+    <span
+      class="close"
+      id="closeNote"
+      onclick="hideModal()"
+      style="display: none"
+      >&times;</span
+    >
+    <span
+      class="close"
+      id="closeBat"
+      onclick="hideModaltwo()"
+      style="display: none"
+      >&times;</span
+    >
+
+    <div class="row">
+      <div class="boxtext">BATTERIES: <span id="batteryCount">0</span></div>
+      <div class="box2">
+        <img src="Images/flashlight-off.png" class="red offsymbol" />
+      </div>
+    </div>
+
+    <div class="row small"></div>
+    <div class="row small"></div>
+    <div class="row small"></div>
+
+    <div class="row">
+      <div class="box2"></div>
+      <div class="box10 center"><img src="" /></div>
+      <div class="box3"></div>
+      <div class="box10 center"><img src="" /></div>
+    </div>
+
+    <div class="row4">
+      <div class="box2"></div>
+      <div class="box10 center">
+        <img class="hover clickable" src="Images/Battery2.png" id="BATTERY1" />
+      </div>
+      <div class="box2"></div>
+      <div class="box10 center">
+        <img class="hover clickable" src="Images/Battery.png" id="BATTERY2" />
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="box2"></div>
+      <div class="box7 center">
+        <img
+          class="hover"
+          id="NOTE"
+          src="Images/OpenNote.png"
+          onclick="modalOpen()"
+          onmouseover="stopFlicker()"
+          onmouseleave="flickerSequence()"
+        />
+      </div>
+    </div>
+
+    <div class="row2">
+      <div class="box"></div>
+      <div class="box3 center"><img src="" /></div>
+      <div class="box4"></div>
+      <div class="box1 center">
+        <img
+          src="Images/BSlots.png"
+          id="SLOTS"
+          onclick="modalOpentwo()"
+          onmouseover="stopFlicker()"
+          onmouseleave="flickerSequence()"
+        />
+      </div>
+      <div class="box3 center"></div>
+      <div class="box5 center">
+        <img class="hover clickable" src="Images/Battery2.png" id="BATTERY3" />
+      </div>
+      <div class="box8 center">
+        <img class="hover clickable" src="Images/Battery4.png" id="BATTERY4" />
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="box"></div>
+      <div class="box3 center"><img src="" /></div>
+      <div class="box5 center"><img src="" /></div>
+      <div class="box5 center">
+        <img class="hover" src="Images/Battery.png" id="BATTERY5" />
+      </div>
+      <div class="box5 center"><img src="" /></div>
+      <div class="box8 center">
+        <img
+          src="Images/down-arrow.png"
+          class="contain-arrow downarrow clickable1"
+          onclick="goDown()"
+        />
+        <div class="box5 center"></div>
+      </div>
+    </div>
+
+    <div class="modal" id="myModalnote" style="display: none">
+      <!-- TITLE ABOVE NOTES -->
+      <div class="note-title">TEAR NOTES SLOWLY</div>
+      <div class="arrowWrap">
+        <img
+          id="NoteLarrow"
+          src="Images/Nleftarrow.png"
+          class="rot-battery clickable2"
+        />
+      </div>
+      <img class="hover2" src="Images/Notes/NoteP1.png" id="Note1" />
+      <div class="arrowWrap">
+        <img
+          id="NoteRarrow"
+          src="Images/Nrightarrow.png"
+          class="rot-battery clickable2"
+        />
+      </div>
+    </div>
+
+    <div id="myModalbat" class="modal-bat">
+      <div class="bat-container">
+        <img id="SlotsImage" src="Images/slots.png" class="slots-img" />
+        <img src="Images/rotate-left.png" class="rot-battery" />
+        <img src="Images/rotate-right.png" class="rot-battery" />
+        <img id="BatteryImage" src="Images/Rbattery.webp" class="rot-battery" />
+      </div>
+
+      <audio src="Sounds/Flashlight Sound Effect sfx.mp4" id="Sound1"></audio>
+      <audio src="Sounds/Sound2.mp4" id="Sound2"></audio>
+      <audio src="Sounds/Sound3.mp4" id="Sound3"></audio>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
